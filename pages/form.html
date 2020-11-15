@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="../css/employee-payroll.css">
     <title>Employee Payroll Form</title>
     <script defer src="../js/new_payroll_form.js"></script>
+    <script src="../js/EmployeePayroll.js"></script>
+    <link rel="shortcut icon" href="../assets/images/logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -30,6 +32,7 @@
             <div class="row-content">
                 <label class="label text" for="name">Name:</label>
                 <input class="input" type="text" id="name" name="name" placeholder="Your name.." required>
+                <error-output class="text-error" for='text'></error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="name">Profile Image</label>
@@ -86,7 +89,7 @@
             </div>
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date:</label>
-                <div>
+                <div id="startDate">
                     <select id="day" name="Day">
                         <option value="0">Day</option>
                         <option value="1">1</option>
@@ -145,6 +148,7 @@
                         <option value="2016">2016</option>
                     </select>
                 </div>
+                <error-output class="date-error" for='text'></error-output>
             </div>
             <div class="row content">
                 <label class="label text" for="notes">Notes</label>
