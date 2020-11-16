@@ -37,3 +37,51 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   });
    
+  // Methods to save on submit and reset
+const save = () => {
+    try {
+      let employeePayroll = createEmployeePayroll();
+    } catch (e) {
+      return;
+    }
+  };
+  
+  const createEmployeePayroll = () => {
+    let employeePayroll = new EmployeePayroll();
+    try {
+      employeePayroll.name = getInputValueById("#name");
+    } catch (e) {
+      setTextValue(".text-error", e);
+      throw e;
+    }
+    employeePayroll.profilePic = getSelectedValues("[name=profile]").pop();
+    employeePayroll.gender = getSelectedValues("[name=gender]").pop();
+    employeePayroll.department = getSelectedValues("[name=department]");
+    employeePayroll.salary = getInputValueById("#salary");
+    employeePayroll.note = getInputValueById("#notes");
+    employeePayroll.startDate = new Date(
+      Date.UTC(
+        getInputValueById("#year"),
+        getInputValueById("#month") - 1,
+        getInputValueById("#day")
+      )
+    );
+    alert(employeePayroll.toString());
+    return employeePayroll;
+  };
+  const getSelectedValues = (propertyValue) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    let selectedItems = [];
+    allItems.forEach((item) => {
+      if (item.checked) selectedItems.push(item.value);
+    });
+    return selectedItems;
+  };
+  const getInputValueById = (id) => {
+    let value = document.querySelector(id).value;
+    return value;
+  };
+  const getInputElementValue = (id) => {
+    let value = document.getElementById(id).value;
+    return value;
+  };
