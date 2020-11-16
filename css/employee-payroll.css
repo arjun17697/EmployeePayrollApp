@@ -1,55 +1,59 @@
-*{box-sizing: border-box;}
-body{
-    margin:0;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
     height: 100%;
 }
 
-
-.header{
-    padding:15px 0;
+.header {
+    padding: 15px 0;
     background-color: white;
 }
 
-.header-content{
+.header-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border:0px solid green;
+    border: 0px solid green;
 }
 
-.logo-content{ 
+.logo-content {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width:80%;
-    border:0px solid green;
+    width: 80%;
+    border: 0px solid green;
 }
 
-.logo-content-img{
+.logo-content-img {
     border: solid 0px #42515f;
 }
-.emp-text{
+
+.emp-text {
     font: normal normal bold 20px/25px Montserrat;
-    font-family: "Montserrat",sans-serif;
+    font-family: "Montserrat", sans-serif;
     letter-spacing: 0px;
     color: #82a70c;
     text-transform: capitalize;
 }
-.emp-payroll{
+
+.emp-payroll {
     color: #42515f;
 }
 
 .form-content {
-    min-height:calc(100% -80px);
+    min-height: calc(100% -80px);
     margin: 20px 0px 20px 0px;
-    background-color:#f7f7f7;
-    display:flex;
+    background-color: #f7f7f7;
+    display: flex;
     justify-content: center;
     align-items: center;
     border: 0px solid green;
-    }
-    
+}
+
 .form {
     width: 65%;
     margin: 20px 0px 20px 0px;
@@ -60,7 +64,7 @@ body{
     border-radius: 8px;
     opacity: 1;
 }
-    
+
 .form-head {
     font: normal normal bold 24px/37px Roboto;
     letter-spacing: 0px;
@@ -68,43 +72,47 @@ body{
     text-transform: capitalize;
     opacity: 1;
     padding-bottom: 20px;
-    
 }
 
-.row-content{
+.row-content {
     display: flex;
     flex-direction: row;
     margin-bottom: 10px;
     align-items: center;
-    border:0px solid green;
+    border: 0px solid green;
 }
-.label{
+
+.label {
     min-width: 140px;
 }
-.label{
-    padding:12px 12px 12px 0px;
+
+.label {
+    padding: 12px 12px 12px 0px;
     display: inline-block;
 }
-.text{
+
+.text {
     font-size: 16px;
-    color:#42515f;
+    color: #42515f;
     opacity: 1;
     font-family: Roboto;
 }
-.input{
-    width:100%;
-    padding:12px;
-    border:1px solid #ccc;
+
+.input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    resize:vertical;
+    resize: vertical;
 }
+
 .profile-radio-content {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.profile-radio-content > label {
+.profile-radio-content>label {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -115,7 +123,8 @@ body{
     border-radius: 50%;
     margin-left: 12px;
 }
-select{
+
+select {
     padding: 12px;
     border: 1px solid #ccc;
     resize: vertical;
@@ -125,14 +134,15 @@ select{
     background-color: transparent;
     border-radius: 5px;
 }
-.buttonParent{
+
+.buttonParent {
     display: flex;
     margin-bottom: 10px;
     justify-content: space-between;
     margin-top: 20px;
 }
 
-.button{
+.button {
     font-size: 20px;
     font-family: Roboto;
     letter-spacing: 0px;
@@ -146,56 +156,57 @@ select{
     border: 1px solid#707070;
     cursor: pointer;
 }
-.submitButton{
-   
+
+.submitButton {
     background-color: #f5f5f5;
     margin-block-end: 30px;
 }
+
 error-output {
     margin-left: 10px;
     font-size: 12px;
     font-style: italic;
     color: red;
-  }
+}
 
-
-.cancelButton{
+.cancelButton {
     text-decoration: none;
     text-align: center;
     background-color: #f5f5f5;
     margin-right: 10px;
-    
-} 
-.resetButton{
+}
+
+.resetButton {
     text-decoration: none;
     text-align: center;
     background-color: #f5f5f5;
-} 
-@media only screen and (max-width:960 px){
-    .cancelButton{
+}
+
+@media only screen and (max-width:960 px) {
+    .cancelButton {
         margin-left: 0px;
     }
-    .form{
+    .form {
         width: 85%;
-        padding: 40px 20px 
+        padding: 40px 20px
     }
 }
 
-@media only screen and (max-width:600px){
-    .form{
+@media only screen and (max-width:600px) {
+    .form {
         margin-top: 10px;
-        width:110%;
+        width: 110%;
     }
-    .row{
+    .row {
         flex-direction: column;
     }
-    .uploadButton{
+    .uploadButton {
         justify-content: flex-start;
     }
-    .profile-radio-button{
+    .profile-radio-button {
         flex-flow: wrap;
     }
-    .submit-reset{
+    .submit-reset {
         width: 100%;
         display: flex;
         flex-grow: 1;
@@ -203,10 +214,10 @@ error-output {
         justify-content: space-between;
         margin-bottom: 20px;
     }
-    .submitButton{
+    .submitButton {
         margin: 0;
     }
-    .buttonParent{
+    .buttonParent {
         flex-direction: column-reverse;
         align-items: flex-start;
     }
