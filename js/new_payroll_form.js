@@ -92,7 +92,7 @@ const createEmployeePayroll = () => {
             getInputValueById("#day")
         )
     );
-    alert(employeePayroll.toString());
+    alert(employeePayroll);
     return employeePayroll;
 };
 const getSelectedValues = (propertyValue) => {

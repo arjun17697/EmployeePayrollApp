@@ -1,12 +1,4 @@
 class EmployeePayroll {
-    // constructor(...params) {
-    //     this.id = params[0];
-    //     this.name = params[1];
-    //     this.salary = params[2];
-    //     this.gender = params[3];
-    //     this.startDate = params[4];
-    // }
-
     get id() {
         return this._id;
     }
@@ -57,25 +49,23 @@ class EmployeePayroll {
     }
     get startDate() {
         const format = { year: "numeric", month: "long", day: "numeric" };
-        const startDate =
+        this._startDate =
             this._startDate === undefined ?
             "undefined" :
-            this.startDate.toLocaleDateString("en-US", format);
-        return startDate;
+            this._startDate.toLocaleDateString("en-US", format);
+        return this._startDate;
     }
     set startDate(startDate) {
         if (startDate > new Date()) throw "Given start date is in future";
         else if (startDate < new Date(Date.UTC(1970, 1, 1)))
             throw "Given start date is before Jan, 1970";
-        else this._startDate = startDate;
-    }
-
-    toString() {
-        const format = { year: "numeric", month: "long", day: "numeric" };
-        const date =
-            this.startDate === undefined ?
-            "undefined" :
-            this.startDate.toLocaleDateString("en-US", format);
-        return `id:${this.id}, name:${this.name}, salary:${this.salary}, gender:${this.gender}, startDate:${date}, department:${this.department}, notes:${this.note}`;
+        else {
+            const format = { year: "numeric", month: "long", day: "numeric" };
+            startDate =
+                startDate === undefined ?
+                "undefined" :
+                startDate.toLocaleDateString("en-US", format);
+        }
+        this._startDate = startDate;
     }
 }
