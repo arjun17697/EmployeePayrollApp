@@ -56,7 +56,12 @@ class EmployeePayroll {
         this._note = note;
     }
     get startDate() {
-        return this._startDate;
+        const format = { year: "numeric", month: "long", day: "numeric" };
+        const startDate =
+            this._startDate === undefined ?
+            "undefined" :
+            this.startDate.toLocaleDateString("en-US", format);
+        return startDate;
     }
     set startDate(startDate) {
         if (startDate > new Date()) throw "Given start date is in future";
