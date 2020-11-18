@@ -1,4 +1,4 @@
 let site_properties = {
-    home_page: "../pages/HomePage.html",
-    add_emp_payroll_page: "../pages/EmployeePayroll.html"
+    home_page: "../pages/homepage.html",
+    add_emp_payroll_page: "../pages/form.html"
 };

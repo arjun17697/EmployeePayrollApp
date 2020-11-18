@@ -26,7 +26,7 @@ const createInnerHtml = () => {
             <td>${emp._gender}</td>
             <td>${getDeptHtml(emp._department)}</td>
             <td>${emp._salary}</td>
-            <td>${emp._startDate}</td>
+            <td>${stringify(emp._startDate)}</td>
             <td>
             <img id="${
                 emp._id
@@ -49,6 +49,9 @@ const getDeptHtml = (deptList) => {
     return deptHtml;
 };
 
+var isUpdating = false;
+var isSaving = false;
+
 
 const remove = (node) => {
     console.log(node.id);
@@ -63,3 +66,21 @@ const remove = (node) => {
     createInnerHtml();
 
 }
+
+var currentNode = this;
+
+const update = (node) => {
+    let empData = empPayrollList.find((emp) => emp._id == node.id);
+    if (!empData) return;
+    // const index = empPayrollList.map((emp) => emp._id).indexOf(empData._id);
+    // empPayrollList.splice(index, 1);
+    localStorage.setItem("editEmp", JSON.stringify(empData));
+    window.location.href = site_properties.add_employee_page;
+    isUpdating = true;
+    currentNode = node;
+};
+
+const removeWithId = (id) => {
+    const index = empPayrollList.map((emp) => emp._id).indexOf(id);
+    empPayrollList.splice(index, 1);
+};
