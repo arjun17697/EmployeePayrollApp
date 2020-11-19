@@ -49,10 +49,6 @@ const getDeptHtml = (deptList) => {
     return deptHtml;
 };
 
-var isUpdating = false;
-var isSaving = false;
-
-
 const remove = (node) => {
     console.log(node.id);
     let empData = empPayrollList.find((emp) => emp._id == node.id);
@@ -67,8 +63,6 @@ const remove = (node) => {
 
 }
 
-var currentNode = this;
-
 const update = (node) => {
     let empData = empPayrollList.find((emp) => emp._id == node.id);
     if (!empData) return;
@@ -78,9 +72,4 @@ const update = (node) => {
     window.location.href = site_properties.add_employee_page;
     isUpdating = true;
     currentNode = node;
-};
-
-const removeWithId = (id) => {
-    const index = empPayrollList.map((emp) => emp._id).indexOf(id);
-    empPayrollList.splice(index, 1);
 };
