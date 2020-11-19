@@ -86,7 +86,7 @@ body {
     min-width: 140px;
 }
 
-.label {
+label {
     padding: 12px 12px 12px 0px;
     display: inline-block;
 }

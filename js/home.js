@@ -1,6 +1,8 @@
 let empPayrollList = [];
 window.addEventListener("DOMContentLoaded", (event) => {
     empPayrollList = getEmpDetailsFromLocalStorage();
+
+
     document.querySelector(".emp-count").textContent = empPayrollList.length;
     createInnerHtml();
     localStorage.removeItem("editEmp");
@@ -50,7 +52,7 @@ const getDeptHtml = (deptList) => {
 };
 
 const remove = (node) => {
-    console.log(node.id);
+
     let empData = empPayrollList.find((emp) => emp._id == node.id);
     if (!empData) return;
     const index = empPayrollList
